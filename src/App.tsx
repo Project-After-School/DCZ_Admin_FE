@@ -1,7 +1,13 @@
+import { Router } from "./Router";
+import { GlobalFont } from "./Styles/GlobalFont";
+import { GlobalStyles } from "./Styles/GlobalStyle";
+
 function App() {
     return (
         <>
-            <div>app</div>
+            <GlobalFont />
+            <GlobalStyles />
+            <Router />
         </>
     );
 }
