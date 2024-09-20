@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../Assets/Logo.svg";
+import Logout from "../Assets/Logout.svg";
 
 export const Header = () => {
     return (
@@ -7,8 +8,11 @@ export const Header = () => {
             <Container>
                 <LogoImg src={Logo} alt="로고" />
                 <TextWrapper>
-                    <Text style={{ color: "#B3F2FF" }}>수학</Text>
-                    <Text>강해민 선생님</Text>
+                    <div>
+                        <Text style={{ color: "#B3F2FF" }}>수학</Text>
+                        <Text>강해민 선생님</Text>
+                    </div>
+                    <img src={Logout} alt="로그아웃" />
                 </TextWrapper>
             </Container>
         </Wrapper>
@@ -38,11 +42,19 @@ const LogoImg = styled.img`
 
 const TextWrapper = styled.div`
     display: flex;
-    gap: 10px;
+    align-items: center;
+    margin-top: 39px;
+    gap: 23px;
+    > div {
+        gap: 10px;
+        display: flex;
+    }
+    > img {
+        cursor: pointer;
+    }
 `;
 
 const Text = styled.div`
     font-weight: 600;
     font-size: 24px;
-    margin-top: 39px;
 `;

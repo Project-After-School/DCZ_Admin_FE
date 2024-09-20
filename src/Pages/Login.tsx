@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "../Assets/Logo(only Text).svg";
 import { Input } from "../Components/Input";
 import { Button } from "../Components/Button";
+import { Header } from "../Components/Header";
 
 export const Login = () => {
     return (
