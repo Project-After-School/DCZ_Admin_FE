@@ -39,15 +39,14 @@ const TitleWrapper = styled.div`
     align-items: center;
     gap: 526px;
     margin-top: 171px;
-    margin-bottom: 28px;
 `;
 
-const Text = styled.p`
+export const Text = styled.p`
     font-weight: 600;
     font-size: 42px;
 `;
 
-const ClassName = styled.p`
+export const ClassName = styled.p`
     font-weight: 600;
     font-size: 32px;
 `;

@@ -54,6 +54,7 @@ export const ChooseDate = () => {
 
     return (
         <Wrapper>
+<<<<<<< Updated upstream
             <DateBox
                 onClick={toggleStartDatePicker}
                 active={isSelectingStartDate}
@@ -67,6 +68,13 @@ export const ChooseDate = () => {
                 active={isSelectingEndDate}
                 selected={!!endDate} // endDate가 있으면 true
             >
+=======
+            <DateBox onClick={toggleStartDatePicker} active={isSelectingStartDate} selected={!!startDate}>
+                {formatDate(startDate, "과제 제출 시작")}
+            </DateBox>
+            <p>-</p>
+            <DateBox onClick={toggleEndDatePicker} active={isSelectingEndDate} selected={!!endDate}>
+>>>>>>> Stashed changes
                 {formatDate(endDate, "과제 제출 마감")}
             </DateBox>
 
