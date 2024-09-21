@@ -54,27 +54,11 @@ export const ChooseDate = () => {
 
     return (
         <Wrapper>
-<<<<<<< Updated upstream
-            <DateBox
-                onClick={toggleStartDatePicker}
-                active={isSelectingStartDate}
-                selected={!!startDate} // startDate가 있으면 true
-            >
-                {formatDate(startDate, "과제 제출 시작")}
-            </DateBox>
-            <p>-</p>
-            <DateBox
-                onClick={toggleEndDatePicker}
-                active={isSelectingEndDate}
-                selected={!!endDate} // endDate가 있으면 true
-            >
-=======
             <DateBox onClick={toggleStartDatePicker} active={isSelectingStartDate} selected={!!startDate}>
                 {formatDate(startDate, "과제 제출 시작")}
             </DateBox>
             <p>-</p>
             <DateBox onClick={toggleEndDatePicker} active={isSelectingEndDate} selected={!!endDate}>
->>>>>>> Stashed changes
                 {formatDate(endDate, "과제 제출 마감")}
             </DateBox>
 
@@ -113,6 +97,7 @@ const Wrapper = styled.div`
     display: flex;
     gap: 12px;
     align-items: center;
+
     > p {
         font-weight: 600;
         font-size: 24px;
@@ -178,6 +163,7 @@ const CalendarWrapper = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+
         abbr {
             font-size: 18px;
             font-weight: 600;
@@ -216,6 +202,7 @@ const CalendarWrapper = styled.div`
         background-color: transparent;
         border-radius: 12px;
     }
+
     .react-calendar__tile:enabled:hover,
     .react-calendar__tile:enabled:focus {
         background: #414142;
@@ -225,9 +212,11 @@ const CalendarWrapper = styled.div`
             background-color: #414142;
         }
     }
+
     .react-calendar__tile--active abbr {
         background-color: #414142;
     }
+
     .react-calendar__tile--active {
         background-color: #414142;
     }
