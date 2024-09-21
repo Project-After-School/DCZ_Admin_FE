@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import cloasEye from "../Assets/closeEye.svg";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    width?: string;
     type?: string;
     placeholder?: string;
     value?: string;
@@ -16,6 +17,7 @@ export const Input: React.FC<InputProps> = ({
     label,
     placeholder,
     value,
+    width,
     onChange,
     isPassword = false,
     ...props
@@ -30,6 +32,7 @@ export const Input: React.FC<InputProps> = ({
         <Wrapper>
             <Label>{label}</Label>
             <InputText
+                width={width}
                 type={isPassword && !showPassword ? "password" : "text"}
                 placeholder={placeholder}
                 value={value}
@@ -54,8 +57,8 @@ const Label = styled.p`
     font-weight: 500;
 `;
 
-const InputText = styled.input`
-    width: calc(100% - 20px);
+const InputText = styled.input<{ width?: string }>`
+    width: ${({ width }) => width || "auto"};
     background-color: #414142;
     height: 56px;
     padding-left: 20px;
