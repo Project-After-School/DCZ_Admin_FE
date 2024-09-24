@@ -59,5 +59,7 @@ const InputWrapper = styled.div`
         background-color: #414142;
         border-radius: 8px;
         padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 400;
     }
 `;
