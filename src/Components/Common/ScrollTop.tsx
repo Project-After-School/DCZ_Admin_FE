@@ -5,7 +5,12 @@ export const ScrollTop = () => {
     const { pathname } = useLocation();
 
     useEffect(() => {
+        window.history.scrollRestoration = "manual";
         window.scrollTo(0, 0);
+
+        return () => {
+            window.history.scrollRestoration = "auto";
+        };
     }, [pathname]);
 
     return null;
