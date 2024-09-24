@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Header } from "../../Components/Common/Header";
 import { SubHeader } from "../../Components/Common/SubHeader";
 import { HomeWorkCard } from "../../Components/HomeWork/HomeWorkCard";
+import { Link } from "react-router-dom";
 
 export const HomeWorkList = () => {
     return (
@@ -14,7 +15,9 @@ export const HomeWorkList = () => {
             <Line />
             <MiddleWrapper>
                 <SubHeader />
-                <Button>과제 만들기</Button>
+                <ButtonStyleLink to={"/homework/create"}>
+                    <Button>과제 만들기</Button>
+                </ButtonStyleLink>
             </MiddleWrapper>
             <ContentWrapper>
                 <HomeWorkCard />
@@ -84,5 +87,8 @@ const Button = styled.button`
     font-size: 18px;
     font-weight: 600;
     color: #00d4ff;
+`;
+
+const ButtonStyleLink = styled(Link)`
     margin-left: auto;
 `;
