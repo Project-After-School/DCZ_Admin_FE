@@ -1,15 +1,25 @@
 import styled from "styled-components";
 import Comment from "../../Assets/Comment.svg";
 import { FeedBackComment } from "./FeedBackComment";
+import { useRef, useEffect, useState } from "react";
 
 export const FeedBack = () => {
+    const [feedback, setFeedback] = useState("");
+    const feedBackEndRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        if (feedBackEndRef.current) {
+            feedBackEndRef.current.scrollTop = feedBackEndRef.current.scrollHeight;
+        }
+    }, [feedback]);
+
     return (
         <Wrapper>
             <TitleWrapper>
                 <Title>피드백</Title>
                 <ExplainText>작성자와 관리자만 열람 가능합니다</ExplainText>
             </TitleWrapper>
-            <ContentWrapper>
+            <ContentWrapper ref={feedBackEndRef}>
                 <FeedBackComment />
                 <FeedBackComment />
                 <FeedBackComment />
