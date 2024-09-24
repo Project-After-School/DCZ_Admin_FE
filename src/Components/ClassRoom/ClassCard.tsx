@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import People from "../../Assets/People.svg";
 import HomeWork from "../../Assets/HomeWork.svg";
 
@@ -9,7 +10,9 @@ export const ClassCard = () => {
                 <img src={People} />
                 <p>2학년 2반</p>
             </ContentWrapper>
-            <ClassRoomName>클래스룸 이름</ClassRoomName>
+            <Link to={"/homework"}>
+                <ClassRoomName>클래스룸 이름</ClassRoomName>
+            </Link>
             <Line />
             <ContentWrapper>
                 <img src={HomeWork} />
@@ -41,6 +44,7 @@ const ContentWrapper = styled.div`
 `;
 
 const ClassRoomName = styled.p`
+    cursor: pointer;
     font-weight: 600;
     font-size: 24px;
 `;

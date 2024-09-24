@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import People from "../../Assets/People.svg";
+import { Link } from "react-router-dom";
 
 export const HomeWorkCard = () => {
     return (
         <Wrapper>
             <DDay>D-4</DDay>
-            <HomeWorkTitle>수학 포스터 만들어서 제출하기</HomeWorkTitle>
+            <Link to={"/homework/detail"}>
+                <HomeWorkTitle>수학 포스터 만들어서 제출하기</HomeWorkTitle>
+            </Link>
             <ContentWrapper>
                 <img src={People} />
                 <p>과제 제출 12/16</p>

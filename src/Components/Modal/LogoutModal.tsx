@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface LogoutModalProps {
     closeModal: (e: any) => void;
@@ -7,7 +8,11 @@ interface LogoutModalProps {
 
 export const LogoutModal = ({ closeModal }: LogoutModalProps) => {
     const [isModalOpen] = useState(true);
+    const navigate = useNavigate();
 
+    const onClick = () => {
+        navigate("/login");
+    };
     return (
         <>
             {isModalOpen && (
@@ -19,7 +24,7 @@ export const LogoutModal = ({ closeModal }: LogoutModalProps) => {
                         </TextWrapper>
                         <ButtonWrapper>
                             <CancleButton>취소</CancleButton>
-                            <SubmitButton>확인</SubmitButton>
+                            <SubmitButton onClick={onClick}>확인</SubmitButton>
                         </ButtonWrapper>
                     </Container>
                 </Wrapper>

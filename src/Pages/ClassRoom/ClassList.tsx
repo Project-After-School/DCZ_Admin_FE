@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Header } from "../../Components/Common/Header";
-import { ClassCard } from "../../Components/HomeWork/ClassCard";
+import { ClassCard } from "../../Components/ClassRoom/ClassCard";
 
 export const ClassList = () => {
     return (

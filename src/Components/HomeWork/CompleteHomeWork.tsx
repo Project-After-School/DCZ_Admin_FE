@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CompleteHomeWork = () => {
@@ -11,26 +12,34 @@ export const CompleteHomeWork = () => {
                 </NumberWrapper>
             </TextWrapper>
             <HomeWorkWrapper>
-                <HomeWorkBox>
-                    <ProfilePicture />
-                    <Text>1번</Text>
-                    <Text>강해민</Text>
-                </HomeWorkBox>
-                <HomeWorkBox>
-                    <ProfilePicture />
-                    <Text>1번</Text>
-                    <Text>강해민</Text>
-                </HomeWorkBox>
-                <HomeWorkBox>
-                    <ProfilePicture />
-                    <Text>1번</Text>
-                    <Text>강해민</Text>
-                </HomeWorkBox>
-                <HomeWorkBox>
-                    <ProfilePicture />
-                    <Text>1번</Text>
-                    <Text>강해민</Text>
-                </HomeWorkBox>
+                <Link to={"/homework/detail/studentId"}>
+                    <HomeWorkBox>
+                        <ProfilePicture />
+                        <Text>1번</Text>
+                        <Text>강해민</Text>
+                    </HomeWorkBox>
+                </Link>
+                <Link to={"/homework/detail/studentId"}>
+                    <HomeWorkBox>
+                        <ProfilePicture />
+                        <Text>1번</Text>
+                        <Text>강해민</Text>
+                    </HomeWorkBox>
+                </Link>
+                <Link to={"/homework/detail/studentId"}>
+                    <HomeWorkBox>
+                        <ProfilePicture />
+                        <Text>1번</Text>
+                        <Text>강해민</Text>
+                    </HomeWorkBox>
+                </Link>
+                <Link to={"/homework/detail/studentId"}>
+                    <HomeWorkBox>
+                        <ProfilePicture />
+                        <Text>1번</Text>
+                        <Text>강해민</Text>
+                    </HomeWorkBox>
+                </Link>
             </HomeWorkWrapper>
         </Wrapper>
     );
