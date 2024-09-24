@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import cloasEye from "../Assets/closeEye.svg";
+import cloasEye from "../../Assets/closeEye.svg";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     width?: string;

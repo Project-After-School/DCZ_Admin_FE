@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import People from "../Assets/People.svg";
+import People from "../../Assets/People.svg";
 
 export const HomeWorkCard = () => {
     return (

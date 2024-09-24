@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Header } from "../Components/Header";
-import Setting from "../Assets/Setting.svg";
-import { Line } from "./CreateClass";
-import DownLoad from "../Assets/DownLoad.svg";
-import { CompleteHomeWork } from "../Components/CompleteHomeWork";
-import { InCompleteHomeWork } from "../Components/InCompleteHomeWork";
-import { QandA } from "../Components/QandA";
-import { EditModal } from "../Components/EditModal";
+import { Header } from "../../Components/Common/Header";
+import Setting from "../../Assets/Setting.svg";
+import { Line } from "../ClassRoom/ClassList";
+import DownLoad from "../../Assets/DownLoad.svg";
+import { CompleteHomeWork } from "../../Components/HomeWork/CompleteHomeWork";
+import { InCompleteHomeWork } from "../../Components/HomeWork/InCompleteHomeWork";
+import { QandA } from "../../Components/HomeWork/QandA";
+import { EditModal } from "../../Components/Modal/EditModal";
 import { useState } from "react";
 
 export const HomeWorkDetail = () => {

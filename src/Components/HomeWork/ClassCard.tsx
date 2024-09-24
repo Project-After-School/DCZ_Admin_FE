@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import People from "../Assets/People.svg";
-import HomeWork from "../Assets/HomeWork.svg";
+import People from "../../Assets/People.svg";
+import HomeWork from "../../Assets/HomeWork.svg";
 
 export const ClassCard = () => {
     return (

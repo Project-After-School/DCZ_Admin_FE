@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Logo from "../Assets/Logo.svg";
-import Logout from "../Assets/Logout.svg";
-import { LogoutModal } from "./LogoutModal";
+import Logo from "../../Assets/Logo.svg";
+import Logout from "../../Assets/Logout.svg";
+import { LogoutModal } from "../Modal/LogoutModal";
 import { useState } from "react";
 
 export const Header = () => {
