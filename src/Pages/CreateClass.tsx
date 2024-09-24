@@ -52,7 +52,7 @@ const Button = styled.button`
     color: #00d4ff;
 `;
 
-const Line = styled.div`
+export const Line = styled.div`
     margin-top: 40px;
     width: 1040px;
     height: 1px;
