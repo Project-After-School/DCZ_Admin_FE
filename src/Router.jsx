@@ -3,6 +3,7 @@ import { Login } from "./Pages/Login";
 import { CreateClass } from "./Pages/CreateClass";
 import { HomeWorkList } from "./Pages/HomeWorkList";
 import { CreateHomeWork } from "./Pages/CreateHomeWork";
+import { HomeWorkDetail } from "./Pages/HomeWorkDetail";
 
 export const Router = () => {
     return (
@@ -12,6 +13,7 @@ export const Router = () => {
                 <Route path="/" element={<CreateClass />} />
                 <Route path="/homework" element={<HomeWorkList />} />
                 <Route path="/homework/create" element={<CreateHomeWork />} />
+                <Route path="/homework/detail" element={<HomeWorkDetail />} />
             </Routes>
         </BrowserRouter>
     );
