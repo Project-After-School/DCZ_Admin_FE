@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Logo from "../Assets/Logo(only Text).svg";
-import { Input } from "../Components/Input";
-import { Button } from "../Components/Button";
+import { Input } from "../Components/Common/Input";
+import { Button } from "../Components/Common/Button";
 
 export const Login = () => {
     return (

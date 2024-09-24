@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Header } from "../Components/Header";
+import { Header } from "../../Components/Common/Header";
 import { Text, ClassName } from "./HomeWorkList";
-import { TextArea } from "../Components/TextArea";
-import { Input } from "../Components/Input";
-import { Button } from "../Components/Button";
-import { ChooseDate } from "../Components/ChooseDate";
+import { TextArea } from "../../Components/Common/TextArea";
+import { Input } from "../../Components/Common/Input";
+import { Button } from "../../Components/Common/Button";
+import { ChooseDate } from "../../Components/HomeWork/ChooseDate";
 
 export const CreateHomeWork = () => {
     return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Comment from "../Assets/Comment.svg";
+import Comment from "../../Assets/Comment.svg";
 
 export const QandAComment = () => {
     return (

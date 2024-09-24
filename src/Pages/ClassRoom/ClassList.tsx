@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Header } from "../Components/Header";
-import { ClassCard } from "../Components/ClassCard";
+import { Header } from "../../Components/Common/Header";
+import { ClassCard } from "../../Components/HomeWork/ClassCard";
 
-export const CreateClass = () => {
+export const ClassList = () => {
     return (
         <Wrapper>
             <Header />

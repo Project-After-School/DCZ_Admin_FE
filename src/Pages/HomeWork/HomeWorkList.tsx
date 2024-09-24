@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Header } from "../Components/Header";
-import { SubHeader } from "../Components/SubHeader";
-import { HomeWorkCard } from "../Components/HomeWorkCard";
+import { Header } from "../../Components/Common/Header";
+import { SubHeader } from "../../Components/Common/SubHeader";
+import { HomeWorkCard } from "../../Components/HomeWork/HomeWorkCard";
 
 export const HomeWorkList = () => {
     return (
