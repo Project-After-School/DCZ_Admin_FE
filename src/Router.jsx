@@ -4,6 +4,7 @@ import { ClassList } from "./Pages/ClassRoom/ClassList";
 import { HomeWorkList } from "./Pages/HomeWork/HomeWorkList";
 import { CreateHomeWork } from "./Pages/HomeWork/CreateHomeWork";
 import { HomeWorkDetail } from "./Pages/HomeWork/HomeWorkDetail";
+import { StudentHomeWorkDetail } from "./Pages/HomeWork/StudentHomeWorkDetail";
 
 export const Router = () => {
     return (
@@ -14,6 +15,7 @@ export const Router = () => {
                 <Route path="/homework" element={<HomeWorkList />} />
                 <Route path="/homework/create" element={<CreateHomeWork />} />
                 <Route path="/homework/detail" element={<HomeWorkDetail />} />
+                <Route path="/homework/detail/studentId" element={<StudentHomeWorkDetail />} />
             </Routes>
         </BrowserRouter>
     );
