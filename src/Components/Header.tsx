@@ -1,21 +1,35 @@
 import styled from "styled-components";
 import Logo from "../Assets/Logo.svg";
 import Logout from "../Assets/Logout.svg";
+import { LogoutModal } from "./LogoutModal";
+import { useState } from "react";
 
 export const Header = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleIconClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
     return (
-        <Wrapper>
-            <Container>
-                <LogoImg src={Logo} alt="로고" />
-                <TextWrapper>
-                    <div>
-                        <Text style={{ color: "#B3F2FF" }}>수학</Text>
-                        <Text>강해민 선생님</Text>
-                    </div>
-                    <img src={Logout} alt="로그아웃" />
-                </TextWrapper>
-            </Container>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <Container>
+                    <LogoImg src={Logo} alt="로고" />
+                    <TextWrapper>
+                        <div>
+                            <Text style={{ color: "#B3F2FF" }}>수학</Text>
+                            <Text>강해민 선생님</Text>
+                        </div>
+                        <img src={Logout} alt="로그아웃" onClick={handleIconClick} />
+                    </TextWrapper>
+                </Container>
+            </Wrapper>
+            {isModalOpen && <LogoutModal closeModal={closeModal} />}
+        </>
     );
 };
 

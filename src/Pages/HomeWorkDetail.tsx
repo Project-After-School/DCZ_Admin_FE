@@ -6,48 +6,63 @@ import DownLoad from "../Assets/DownLoad.svg";
 import { CompleteHomeWork } from "../Components/CompleteHomeWork";
 import { InCompleteHomeWork } from "../Components/InCompleteHomeWork";
 import { QandA } from "../Components/QandA";
+import { EditModal } from "../Components/EditModal";
+import { useState } from "react";
 
 export const HomeWorkDetail = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleIconClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
-        <Wrapper>
-            <Header />
-            <Container>
-                <TitleWrapper>
-                    <p>수학 포스터 만들어서 제출하기</p>
-                    <img src={Setting} alt="" />
-                </TitleWrapper>
-                <Date>9월 20일 ~ 9월 30일</Date>
-                <Line />
-                <ContentWrapper>
-                    <LeftContainer>
-                        <TextWrapper>
-                            <Text>과제 설명</Text>
-                            <ExplainText>
-                                한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와
-                                얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서
-                                만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로
-                                11포인트로 해서 만ㄷ르어와 얘들아~
-                            </ExplainText>
-                            <Text>제출 양식</Text>
-                            <ExplainText>한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~</ExplainText>
-                            <Line2 />
-                            <FileWrapper>
-                                <Text>파일 양식</Text>
-                                <File>
-                                    <img src={DownLoad} alt="저장" />
-                                    <p>수학 파일.hwp</p>
-                                </File>
-                            </FileWrapper>
-                        </TextWrapper>
-                        <CompleteHomeWork />
-                    </LeftContainer>
-                    <RightContainer>
-                        <InCompleteHomeWork />
-                        <QandA />
-                    </RightContainer>
-                </ContentWrapper>
-            </Container>
-        </Wrapper>
+        <>
+            <Wrapper>
+                <Header />
+                <Container>
+                    <TitleWrapper>
+                        <p>수학 포스터 만들어서 제출하기</p>
+                        <img src={Setting} alt="설정" onClick={handleIconClick} style={{ cursor: "pointer" }} />
+                    </TitleWrapper>
+                    <Date>9월 20일 ~ 9월 30일</Date>
+                    <Line />
+                    <ContentWrapper>
+                        <LeftContainer>
+                            <TextWrapper>
+                                <Text>과제 설명</Text>
+                                <ExplainText>
+                                    한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서
+                                    만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로
+                                    11포인트로 해서 만ㄷ르어와 얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와
+                                    얘들아~한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~
+                                </ExplainText>
+                                <Text>제출 양식</Text>
+                                <ExplainText>한글 ㅁ누서로 11포인트로 해서 만ㄷ르어와 얘들아~</ExplainText>
+                                <Line2 />
+                                <FileWrapper>
+                                    <Text>파일 양식</Text>
+                                    <File>
+                                        <img src={DownLoad} alt="저장" />
+                                        <p>수학 파일.hwp</p>
+                                    </File>
+                                </FileWrapper>
+                            </TextWrapper>
+                            <CompleteHomeWork />
+                        </LeftContainer>
+                        <RightContainer>
+                            <InCompleteHomeWork />
+                            <QandA />
+                        </RightContainer>
+                    </ContentWrapper>
+                </Container>
+            </Wrapper>
+            {isModalOpen && <EditModal closeModal={closeModal} />}
+        </>
     );
 };
 
