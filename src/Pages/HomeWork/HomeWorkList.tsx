@@ -20,11 +20,8 @@ export const HomeWorkList = () => {
                 </ButtonStyleLink>
             </MiddleWrapper>
             <ContentWrapper>
-                <HomeWorkCard />
-                <HomeWorkCard />
-                <HomeWorkCard />
-                <HomeWorkCard />
-                <HomeWorkCard />
+                <HomeWorkCard status="remain" />
+                <HomeWorkCard status="end" />
             </ContentWrapper>
         </Wrapper>
     );

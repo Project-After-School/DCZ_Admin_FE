@@ -5,10 +5,12 @@ import { HomeWorkList } from "./Pages/HomeWork/HomeWorkList";
 import { CreateHomeWork } from "./Pages/HomeWork/CreateHomeWork";
 import { HomeWorkDetail } from "./Pages/HomeWork/HomeWorkDetail";
 import { StudentHomeWorkDetail } from "./Pages/HomeWork/StudentHomeWorkDetail";
+import { ScrollTop } from "./Components/Common/ScrollTop";
 
 export const Router = () => {
     return (
         <BrowserRouter>
+            <ScrollTop />
             <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/" element={<ClassList />} />

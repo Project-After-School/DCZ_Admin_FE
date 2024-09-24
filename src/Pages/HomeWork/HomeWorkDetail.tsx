@@ -46,10 +46,12 @@ export const HomeWorkDetail = () => {
                                 <Line2 />
                                 <FileWrapper>
                                     <Text>파일 양식</Text>
-                                    <File>
-                                        <img src={DownLoad} alt="저장" />
-                                        <p>수학 파일.hwp</p>
-                                    </File>
+                                    <FileContainer>
+                                        <File>
+                                            <img src={DownLoad} alt="저장" />
+                                            <p>수학 파일.hwp</p>
+                                        </File>
+                                    </FileContainer>
                                 </FileWrapper>
                             </TextWrapper>
                             <CompleteHomeWork />
@@ -138,6 +140,12 @@ const FileWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 12px;
+`;
+
+const FileContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 `;
 
 const File = styled.div`

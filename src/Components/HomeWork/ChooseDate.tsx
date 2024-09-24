@@ -7,7 +7,7 @@ import { Value } from "react-calendar/dist/cjs/shared/types";
 
 moment.locale("ko");
 
-export const ChooseDate = () => {
+export const ChooseDate = ({ onDatesChange }: { onDatesChange: (start: Date | null, end: Date | null) => void }) => {
     const [startDate, setStartDate] = useState<Date | null>(null);
     const [endDate, setEndDate] = useState<Date | null>(null);
     const [isSelectingStartDate, setIsSelectingStartDate] = useState<boolean>(false);
@@ -18,8 +18,10 @@ export const ChooseDate = () => {
         if (value instanceof Date) {
             if (isStartDate) {
                 setStartDate(value);
+                onDatesChange(value, endDate);
             } else {
                 setEndDate(value);
+                onDatesChange(startDate, value);
             }
         }
     };

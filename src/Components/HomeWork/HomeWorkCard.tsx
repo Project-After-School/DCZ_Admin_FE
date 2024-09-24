@@ -1,16 +1,23 @@
 import styled from "styled-components";
 import People from "../../Assets/People.svg";
 import { Link } from "react-router-dom";
+import GrayPeople from "../../Assets/GrayPeople.svg";
 
-export const HomeWorkCard = () => {
+interface DateProps {
+    status: "remain" | "end";
+}
+
+export const HomeWorkCard: React.FC<DateProps> = ({ status }) => {
+    const imageSrc = status === "remain" ? People : GrayPeople;
+
     return (
         <Wrapper>
-            <DDay>D-4</DDay>
+            <DDay status={status}>{status === "remain" ? "D-4" : "기간 만료"}</DDay>
             <Link to={"/homework/detail"}>
-                <HomeWorkTitle>수학 포스터 만들어서 제출하기</HomeWorkTitle>
+                <HomeWorkTitle status={status}>수학 포스터 만들어서 제출하기</HomeWorkTitle>
             </Link>
             <ContentWrapper>
-                <img src={People} />
+                <img src={imageSrc} />
                 <p>과제 제출 12/16</p>
             </ContentWrapper>
         </Wrapper>
@@ -28,15 +35,16 @@ const Wrapper = styled.div`
     gap: 24px;
 `;
 
-const DDay = styled.p`
+const DDay = styled.p<DateProps>`
     font-size: 24px;
     font-weight: 600;
-    color: #00b9ff;
+    color: ${({ status }) => (status === "remain" ? "#00B9FF" : "#B8B8B8")};
 `;
 
-const HomeWorkTitle = styled.p`
+const HomeWorkTitle = styled.p<DateProps>`
     font-weight: 600;
     font-size: 32px;
+    color: ${({ status }) => (status === "remain" ? "white" : "#B8B8B8")};
 `;
 
 const ContentWrapper = styled.div`
