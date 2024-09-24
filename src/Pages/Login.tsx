@@ -2,18 +2,38 @@ import styled from "styled-components";
 import Logo from "../Assets/Logo(only Text).svg";
 import { Input } from "../Components/Common/Input";
 import { Button } from "../Components/Common/Button";
+import { useState, useEffect } from "react";
 
 export const Login = () => {
+    const [id, setId] = useState("");
+    const [password, setPassword] = useState("");
+    const [isDisabled, setIsDisabled] = useState(true);
+
+    useEffect(() => {
+        if (id && password) {
+            setIsDisabled(false);
+        } else {
+            setIsDisabled(true);
+        }
+    }, [id, password]);
+
     return (
         <Wrapper>
             <img src={Logo} alt="로고" />
             <ContentWrapper>
                 <p>로그인 하기</p>
-                <Input label="아이디" placeholder="아이디 입력" />
-                <Input isPassword={true} type="password" label="비밀번호" placeholder="비밀번호 입력" />
+                <Input label="아이디" placeholder="아이디 입력" value={id} onChange={(e) => setId(e.target.value)} />
+                <Input
+                    isPassword={true}
+                    type="password"
+                    label="비밀번호"
+                    placeholder="비밀번호 입력"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
             </ContentWrapper>
             <ButtonWrapper>
-                <Button to="/" content="로그인하기" disabled={true} size="small" />
+                <Button to="/" content="로그인하기" disabled={isDisabled} size="small" />
             </ButtonWrapper>
         </Wrapper>
     );
