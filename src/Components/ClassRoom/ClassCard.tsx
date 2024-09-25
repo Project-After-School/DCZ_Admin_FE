@@ -24,7 +24,7 @@ export const ClassCard = () => {
 
 const Wrapper = styled.div`
     display: flex;
-    width: 460px;
+    width: calc(100% - 40px);
     height: 149px;
     flex-direction: column;
     padding: 20px;

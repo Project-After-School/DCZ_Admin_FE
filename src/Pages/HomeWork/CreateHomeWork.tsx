@@ -46,63 +46,65 @@ export const CreateHomeWork = () => {
     return (
         <Wrapper>
             <Header />
-            <TitleWrapper>
-                <Text>새로운 과제</Text>
-                <ClassName>2학년 2반</ClassName>
-            </TitleWrapper>
-            <Line />
-            <ContentWrapper>
-                <DateWrapper>
-                    <p>과제 기간</p>
-                    <ChooseDateWrapper>
-                        <ChooseDate onDatesChange={handleDatesChange} />
-                    </ChooseDateWrapper>
-                </DateWrapper>
-                <Input
-                    label="제목"
-                    placeholder="제목을 입력해주세요."
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                />
-                <TextArea
-                    label="과제 내용"
-                    height="156px"
-                    placeholder="과제 내용을 입력해주세요."
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                />
-                <TextArea
-                    label="제출 양식"
-                    height="88px"
-                    placeholder="제출 양식을 입력해주세요."
-                    value={submitForm}
-                    onChange={(e) => setSubmitForm(e.target.value)}
-                />
-                <FileWrapper>
-                    <FileContainer>
-                        <p>파일 양식</p>
-                        <FileAddButton onClick={() => document.getElementById("fileInput")?.click()}>
-                            파일 추가
-                        </FileAddButton>
-                        <FileInput id="fileInput" type="file" multiple onChange={handleFileChange} />
-                    </FileContainer>
-                    {files.length > 0 && (
-                        <SelectedFileWrapper>
-                            {files.map((file, index) => (
-                                <SelectedFile key={index}>
-                                    <FileName>{file.name}</FileName>
-                                    <DeleteIcon src={Delete} onClick={() => handleDeleteFile(index)} />
-                                </SelectedFile>
-                            ))}
-                        </SelectedFileWrapper>
-                    )}
-                </FileWrapper>
-                <ButtonWrapper>
-                    <div>
-                        <Button to="/homework" disabled={isDisabled} content="과제 업로드" />
-                    </div>
-                </ButtonWrapper>
-            </ContentWrapper>
+            <Container>
+                <TitleWrapper>
+                    <Text>새로운 과제</Text>
+                    <ClassName>2학년 2반</ClassName>
+                </TitleWrapper>
+                <Line />
+                <ContentWrapper>
+                    <DateWrapper>
+                        <p>과제 기간</p>
+                        <ChooseDateWrapper>
+                            <ChooseDate onDatesChange={handleDatesChange} />
+                        </ChooseDateWrapper>
+                    </DateWrapper>
+                    <Input
+                        label="제목"
+                        placeholder="제목을 입력해주세요."
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                    <TextArea
+                        label="과제 내용"
+                        height="156px"
+                        placeholder="과제 내용을 입력해주세요."
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                    />
+                    <TextArea
+                        label="제출 양식"
+                        height="88px"
+                        placeholder="제출 양식을 입력해주세요."
+                        value={submitForm}
+                        onChange={(e) => setSubmitForm(e.target.value)}
+                    />
+                    <FileWrapper>
+                        <FileContainer>
+                            <p>파일 양식</p>
+                            <FileAddButton onClick={() => document.getElementById("fileInput")?.click()}>
+                                파일 추가
+                            </FileAddButton>
+                            <FileInput id="fileInput" type="file" multiple onChange={handleFileChange} />
+                        </FileContainer>
+                        {files.length > 0 && (
+                            <SelectedFileWrapper>
+                                {files.map((file, index) => (
+                                    <SelectedFile key={index}>
+                                        <FileName>{file.name}</FileName>
+                                        <DeleteIcon src={Delete} onClick={() => handleDeleteFile(index)} />
+                                    </SelectedFile>
+                                ))}
+                            </SelectedFileWrapper>
+                        )}
+                    </FileWrapper>
+                    <ButtonWrapper>
+                        <div>
+                            <Button to="/homework" disabled={isDisabled} content="과제 업로드" />
+                        </div>
+                    </ButtonWrapper>
+                </ContentWrapper>
+            </Container>
         </Wrapper>
     );
 };
@@ -114,9 +116,16 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 
+const Container = styled.div`
+    width: 1040px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
+`;
+
 const Line = styled.div`
     margin-top: 40px;
-    width: 1040px;
+    width: 100%;
     height: 1px;
     background-color: #414142;
     margin-bottom: 60px;
@@ -125,7 +134,6 @@ const Line = styled.div`
 const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    gap: 723px;
     margin-top: 171px;
 `;
 
@@ -134,7 +142,7 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 60px;
-    width: 1040px;
+    width: 100%;
     margin-bottom: 100px;
 `;
 

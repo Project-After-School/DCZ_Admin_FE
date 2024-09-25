@@ -79,7 +79,7 @@ export const ChooseDate = ({ onDatesChange }: { onDatesChange: (start: Date | nu
             )}
 
             {isSelectingEndDate && (
-                <CalendarWrapper ref={calendarRef} style={{ left: "639px" }}>
+                <CalendarWrapper ref={calendarRef}>
                     <Calendar
                         locale="ko"
                         onChange={(value) => handleDateChange(value, false)}

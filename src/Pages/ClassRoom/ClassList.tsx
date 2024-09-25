@@ -6,18 +6,20 @@ export const ClassList = () => {
     return (
         <Wrapper>
             <Header />
-            <TitleWrapper>
-                <p>개설된 수학 클래스</p>
-                <Button>클래스 개설</Button>
-            </TitleWrapper>
-            <Line />
-            <ContentWrapper>
-                <ClassCard />
-                <ClassCard />
-                <ClassCard />
-                <ClassCard />
-                <ClassCard />
-            </ContentWrapper>
+            <Container>
+                <TitleWrapper>
+                    <p>개설된 수학 클래스</p>
+                    <Button>클래스 개설</Button>
+                </TitleWrapper>
+                <Line />
+                <ContentWrapper>
+                    <ClassCard />
+                    <ClassCard />
+                    <ClassCard />
+                    <ClassCard />
+                    <ClassCard />
+                </ContentWrapper>
+            </Container>
         </Wrapper>
     );
 };
@@ -29,10 +31,17 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 
+const Container = styled.div`
+    width: 1040px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
+`;
+
 const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    gap: 606px;
+    width: 100%;
     margin-top: 171px;
     > p {
         font-weight: 600;
@@ -50,11 +59,12 @@ const Button = styled.button`
     font-size: 18px;
     font-weight: 600;
     color: #00d4ff;
+    margin-left: auto;
 `;
 
 export const Line = styled.div`
     margin-top: 40px;
-    width: 1040px;
+    width: 100%;
     height: 1px;
     background-color: #414142;
 `;
@@ -65,4 +75,5 @@ const ContentWrapper = styled.div`
     gap: 40px;
     margin-top: 40px;
     margin-bottom: 100px;
+    width: 100%;
 `;
