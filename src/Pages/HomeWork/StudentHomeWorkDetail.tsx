@@ -42,6 +42,9 @@ const Wrapper = styled.div`
 const Container = styled.div`
     margin-top: 90px;
     width: 1040px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
 `;
 
 const StudentInfo = styled.p`
@@ -71,8 +74,8 @@ const ContentWrapper = styled.div`
 `;
 
 const FilePreview = styled.div`
-    width: 720px;
-    height: 1008px;
+    width: 100%;
+    aspect-ratio: 1 / 1.414;
     background-color: white;
     border-radius: 12px;
 `;

@@ -3,6 +3,7 @@ import Logo from "../../Assets/Logo.svg";
 import Logout from "../../Assets/Logout.svg";
 import { LogoutModal } from "../Modal/LogoutModal";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,11 +15,14 @@ export const Header = () => {
     const closeModal = () => {
         setIsModalOpen(false);
     };
+
     return (
         <>
             <Wrapper>
                 <Container>
-                    <LogoImg src={Logo} alt="로고" />
+                    <Link to={"/"}>
+                        <LogoImg src={Logo} alt="로고" />
+                    </Link>
                     <TextWrapper>
                         <div>
                             <Text style={{ color: "#B3F2FF" }}>수학</Text>
@@ -48,7 +52,13 @@ const Wrapper = styled.div`
 const Container = styled.div`
     display: flex;
     align-items: center;
-    gap: 556px;
+    justify-content: center;
+    width: 1040px;
+    justify-content: space-between;
+
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
 `;
 
 const LogoImg = styled.img`
@@ -59,6 +69,7 @@ const TextWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 39px;
+    margin-left: auto;
     gap: 23px;
     > div {
         gap: 10px;

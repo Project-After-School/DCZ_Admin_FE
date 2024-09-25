@@ -8,21 +8,23 @@ export const HomeWorkList = () => {
     return (
         <Wrapper>
             <Header />
-            <TitleWrapper>
-                <Text>과제 제출 (클래스룸 명)</Text>
-                <ClassName>2학년 2반</ClassName>
-            </TitleWrapper>
-            <Line />
-            <MiddleWrapper>
-                <SubHeader />
-                <ButtonStyleLink to={"/homework/create"}>
-                    <Button>과제 만들기</Button>
-                </ButtonStyleLink>
-            </MiddleWrapper>
-            <ContentWrapper>
-                <HomeWorkCard status="remain" />
-                <HomeWorkCard status="end" />
-            </ContentWrapper>
+            <Container>
+                <TitleWrapper>
+                    <Text>과제 제출 (클래스룸 명)</Text>
+                    <ClassName>2학년 2반</ClassName>
+                </TitleWrapper>
+                <Line />
+                <MiddleWrapper>
+                    <SubHeader />
+                    <ButtonStyleLink to={"/homework/create"}>
+                        <Button>과제 만들기</Button>
+                    </ButtonStyleLink>
+                </MiddleWrapper>
+                <ContentWrapper>
+                    <HomeWorkCard status="remain" />
+                    <HomeWorkCard status="end" />
+                </ContentWrapper>
+            </Container>
         </Wrapper>
     );
 };
@@ -34,11 +36,18 @@ const Wrapper = styled.div`
     width: 100%;
 `;
 
+const Container = styled.div`
+    width: 1040px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
+`;
+
 const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    gap: 526px;
     margin-top: 171px;
+    width: 100%;
 `;
 
 export const Text = styled.p`
@@ -49,6 +58,7 @@ export const Text = styled.p`
 export const ClassName = styled.p`
     font-weight: 600;
     font-size: 32px;
+    margin-left: auto;
 `;
 
 const Line = styled.div`
@@ -62,7 +72,7 @@ const Line = styled.div`
 const MiddleWrapper = styled.div`
     display: flex;
     align-items: center;
-    width: 1040px;
+    width: 100%;
     margin-bottom: 36px;
 `;
 
@@ -71,6 +81,7 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     gap: 24px;
     align-items: center;
+    width: 100%;
     margin-bottom: 100px;
 `;
 

@@ -77,18 +77,21 @@ const Wrapper = styled.div`
 const Container = styled.div`
     margin-top: 90px;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    width: 1040px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
 `;
 
 const TitleWrapper = styled.div`
     display: flex;
     align-items: center;
     margin-top: 79px;
-    gap: 629px;
     > p {
         font-size: 32px;
         font-weight: 600;
+        margin-right: auto;
     }
 `;
 
