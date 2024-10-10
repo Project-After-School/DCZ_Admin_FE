@@ -2,19 +2,22 @@ import styled from "styled-components";
 import { Header } from "../../Components/Common/Header";
 import { SubHeader } from "../../Components/Common/SubHeader";
 import { NoticeList } from "../../Components/Notice/NoticeList";
+import { Link } from "react-router-dom";
 
 export const Notice = () => {
   return (
     <Wrapper>
       <Header />
       <TitleWrapper>
-        <Text>과제 제출 (클래스룸 명)</Text>
+        <Text>공지 리스트 (클래스룸 명)</Text>
         <ClassName>2학년 2반</ClassName>
       </TitleWrapper>
       <Line />
       <MiddleWrapper>
         <SubHeader />
-        <Button>공지 만들기</Button>
+        <ButtonStyleLink to="/notice/upload">
+          <Button>공지 만들기</Button>
+        </ButtonStyleLink>
       </MiddleWrapper>
       <ListWrapper>
         <NoticeList />
@@ -24,6 +27,10 @@ export const Notice = () => {
     </Wrapper>
   );
 };
+
+const ButtonStyleLink = styled(Link)`
+  margin-left: auto;
+`;
 
 const Wrapper = styled.div`
   display: flex;
