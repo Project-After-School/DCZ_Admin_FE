@@ -7,6 +7,7 @@ import { Button } from "../../Components/Common/Button";
 import { ChooseDate } from "../../Components/HomeWork/ChooseDate";
 import { useState, useEffect } from "react";
 import Delete from "../../Assets/Delete.svg";
+import { CheckClass } from "../../Components/HomeWork/CheckClass";
 
 export const CreateHomeWork = () => {
     const [title, setTitle] = useState("");
@@ -98,6 +99,7 @@ export const CreateHomeWork = () => {
                             </SelectedFileWrapper>
                         )}
                     </FileWrapper>
+                    <CheckClass />
                     <ButtonWrapper>
                         <div>
                             <Button to="/homework" disabled={isDisabled} content="과제 업로드" />
