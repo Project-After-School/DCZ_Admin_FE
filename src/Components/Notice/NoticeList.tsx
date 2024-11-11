@@ -25,8 +25,11 @@ export const NoticeList = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  width: calc(1040px - 48px);
+  width: calc(100% - 48px);
+  max-width: 1040px;
   height: 132px;
+  margin: 0 auto;
+  padding: 10px 0;
 `;
 
 const ContentWrapper = styled.div`
@@ -48,11 +51,15 @@ const RightContentWrapper = styled.div`
 const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap:15px;
+  gap: 15px;
 `;
 
 const Text = styled.div<TextProps & { color?: string }>`
   font-size: ${(props) => (props.main ? "24px" : "20px")};
   font-weight: ${(props) => (props.main ? "600" : "500")};
   color: ${(props) => props.color || (props.read ? "#707071" : "#00D4FF")};
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => (props.main ? "20px" : "18px")};
+  }
 `;
