@@ -3,6 +3,8 @@ import Logo from "../Assets/Logo(only Text).svg";
 import { Input } from "../Components/Common/Input";
 import { Button } from "../Components/Common/Button";
 import { useState, useEffect } from "react";
+import { adminLogin } from "../Apis/admin/admin";
+import { Cookie } from "../Utils/Cookie";
 
 export const Login = () => {
     const [id, setId] = useState("");
@@ -16,6 +18,19 @@ export const Login = () => {
             setIsDisabled(true);
         }
     }, [id, password]);
+
+    const handleLogin = () => {
+        adminLogin({
+            username: id,
+            password: password,
+        })
+            .then((response) => {
+                Cookie.set("accessToken", response.data.accessToken);
+            })
+            .catch(() => {
+                setPassword("");
+            });
+    };
 
     return (
         <Wrapper>
@@ -33,7 +48,7 @@ export const Login = () => {
                 />
             </ContentWrapper>
             <ButtonWrapper>
-                <Button to="/" content="로그인하기" disabled={isDisabled} size="small" />
+                <Button to="/" content="로그인하기" disabled={isDisabled} size="small" onClick={handleLogin} />
             </ButtonWrapper>
         </Wrapper>
     );
