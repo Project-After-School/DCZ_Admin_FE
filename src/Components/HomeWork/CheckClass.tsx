@@ -5,9 +5,16 @@ import React, { useState } from "react";
 interface CheckClassProps {
     onChangeGrade: (grades: string[]) => void;
     onChangeClassNum: (classNums: string[]) => void;
+    initialGrade?: string[];
+    initialClassNum?: string[];
 }
 
-export const CheckClass: React.FC<CheckClassProps> = ({ onChangeClassNum, onChangeGrade }) => {
+export const CheckClass: React.FC<CheckClassProps> = ({
+    onChangeClassNum,
+    onChangeGrade,
+    initialClassNum = [],
+    initialGrade = [],
+}) => {
     const [selectedClass, setSelectedClass] = useState<{ grade: string; classNum: string }[]>([]);
 
     const handleClassChange = (grade: string, classNum: string) => {

@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import { noticeList } from "../../Apis/notice/type";
+import { getNoticeResponse } from "../../Apis/notice/type";
 import { useNavigate } from "react-router-dom";
 import { useTimeStamp } from "../../Hooks/useTimeStamp";
 
-interface TextProps {
-    main?: boolean;
-    read?: boolean;
-}
-
 interface NoticeListProps {
-    notice: noticeList;
+    notice: getNoticeResponse;
 }
 
 export const NoticeList = ({ notice }: NoticeListProps) => {
     const navigate = useNavigate();
-    const isAllRead = true;
 
     const handleClick = () => {
         navigate(`/notice/${notice.id}`);

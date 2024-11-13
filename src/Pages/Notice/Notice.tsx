@@ -4,11 +4,11 @@ import { SubHeader } from "../../Components/Common/SubHeader";
 import { NoticeList } from "../../Components/Notice/NoticeList";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { noticeList } from "../../Apis/notice/type";
+import { getNoticeResponse } from "../../Apis/notice/type";
 import { getNotice } from "../../Apis/notice/notice";
 
 export const Notice = () => {
-    const [notices, setNotices] = useState<noticeList[]>([]);
+    const [notices, setNotices] = useState<getNoticeResponse[]>([]);
 
     useEffect(() => {
         getNotice()

@@ -9,7 +9,7 @@ import { createNotice } from "../../Apis/notice/notice";
 import { createNoticeRequest } from "../../Apis/notice/type";
 import { useNavigate } from "react-router-dom";
 
-export const NoticeUpload: React.FC = () => {
+export const NoticeUpload = () => {
     const [title, setTitle] = useState<string>("");
     const [content, setContent] = useState<string>("");
     const [isDisabled, setIsDisabled] = useState(true);
