@@ -67,6 +67,9 @@ const Line = styled.div`
     height: 1px;
     background-color: #414142;
     margin-bottom: 28px;
+    @media (max-width: 1200px) {
+        width: 800px;
+    }
 `;
 
 const MiddleWrapper = styled.div`
