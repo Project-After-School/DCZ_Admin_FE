@@ -1,6 +1,8 @@
 import instance from "../axios";
 import {
+    createCommentResponse,
     createNoticeRequest,
+    getCommentResponse,
     getNoticeDetailResponse,
     getNoticeResponse,
     updateNoticeRequest,
@@ -28,4 +30,12 @@ export const updateNotice = async (notificationId: number, data: updateNoticeReq
         `/admin/update_notification?notification_id=${notificationId}`,
         data
     );
+};
+
+export const createComment = async (notificationId: number, content: string) => {
+    return await instance.post<createCommentResponse>(`/admin/notifications/${notificationId}/comments`, content);
+};
+
+export const getComment = async (notificationId: number) => {
+    return await instance.get<getCommentResponse[]>(`/notifications/${notificationId}/comments`);
 };

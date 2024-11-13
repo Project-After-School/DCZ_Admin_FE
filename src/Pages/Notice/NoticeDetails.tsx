@@ -52,7 +52,7 @@ export const NoticeDetails = () => {
                         <Content>{noticeDetail?.content}</Content>
                     </ContentContainer>
                     <QandAContainer>
-                        <QandA />
+                        <QandA notificationId={Number(notificationId)} />
                     </QandAContainer>
                 </MainContainer>
             </Wrapper>
@@ -103,12 +103,13 @@ const ContentContainer = styled.div`
 `;
 
 const QandAContainer = styled.div`
-    flex: 1;
     margin-left: 20px;
-    @media (max-width: 768px) {
+    width: 280px;
+
+    /* @media (max-width: 768px) {
         margin-left: 10px;
         margin-top: 20px;
-    }
+    } */
 `;
 
 const TitleWrapper = styled.div`

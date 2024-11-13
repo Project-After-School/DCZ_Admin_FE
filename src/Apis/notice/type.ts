@@ -40,3 +40,22 @@ export interface updateNoticeResponse {
     author_name: string;
     date: string;
 }
+
+export interface createCommentResponse {
+    id: number;
+    content: string;
+    date: string;
+    author_id: string;
+    notification_id: number;
+    author_type: string;
+}
+
+export interface getCommentResponse {
+    id: number;
+    content: string;
+    date: string;
+    author_id: string;
+    notification_id: number;
+    author_type: string;
+    author_name: string;
+}
