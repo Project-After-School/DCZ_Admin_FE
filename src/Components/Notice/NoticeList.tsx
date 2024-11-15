@@ -1,65 +1,60 @@
 import styled from "styled-components";
+import { getNoticeResponse } from "../../Apis/notice/type";
+import { useNavigate } from "react-router-dom";
+import { useTimeStamp } from "../../Hooks/useTimeStamp";
 
-interface TextProps {
-  main?: boolean;
-  read?: boolean;
+interface NoticeListProps {
+    notice: getNoticeResponse;
 }
 
-export const NoticeList = () => {
-  const isAllRead = true;
+export const NoticeList = ({ notice }: NoticeListProps) => {
+    const navigate = useNavigate();
 
-  return (
-    <Wrapper>
-      <ContentWrapper>
-        <TextWrapper>
-          <Text main>수학 수행평가 안내</Text>
-          <Text color="#707071">1일전</Text>
-        </TextWrapper>
-      </ContentWrapper>
-      <RightContentWrapper>
-        <Text read={isAllRead}>1명읽음</Text>
-      </RightContentWrapper>
-    </Wrapper>
-  );
+    const handleClick = () => {
+        navigate(`/notice/${notice.id}`);
+    };
+
+    const timeAgo = useTimeStamp(notice.date);
+
+    return (
+        <Wrapper>
+            <ContentWrapper>
+                <TextWrapper>
+                    <Title onClick={handleClick}>{notice.title}</Title>
+                    <Days>{timeAgo}</Days>
+                </TextWrapper>
+            </ContentWrapper>
+        </Wrapper>
+    );
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  width: calc(100% - 48px);
-  max-width: 1040px;
-  height: 132px;
-  margin: 0 auto;
-  padding: 10px 0;
+    display: flex;
+    width: 100%;
+    height: 132px;
 `;
 
 const ContentWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-`;
-
-const RightContentWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 `;
 
 const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 `;
 
-const Text = styled.div<TextProps & { color?: string }>`
-  font-size: ${(props) => (props.main ? "24px" : "20px")};
-  font-weight: ${(props) => (props.main ? "600" : "500")};
-  color: ${(props) => props.color || (props.read ? "#707071" : "#00D4FF")};
+const Title = styled.p`
+    font-weight: 600;
+    font-size: 24px;
+    cursor: pointer;
+`;
 
-  @media (max-width: 768px) {
-    font-size: ${(props) => (props.main ? "20px" : "18px")};
-  }
+const Days = styled.p`
+    font-weight: 500;
+    font-size: 20px;
+    color: #b8b8b8;
 `;

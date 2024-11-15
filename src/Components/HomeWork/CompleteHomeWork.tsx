@@ -50,6 +50,7 @@ const Wrapper = styled.div`
     gap: 28px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 `;
 
 const TextWrapper = styled.div`

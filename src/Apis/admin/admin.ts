@@ -1,4 +1,4 @@
-import instance from "../api";
+import instance from "../axios";
 import { LoginRequest } from "./type";
 
 const router = "/admin";

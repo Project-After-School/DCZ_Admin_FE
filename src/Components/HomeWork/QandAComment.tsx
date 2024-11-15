@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import Comment from "../../Assets/Comment.svg";
+import { getCommentResponse } from "../../Apis/notice/type";
 
-export const QandAComment = () => {
+interface QandACommentProps {
+    comment: getCommentResponse;
+}
+
+export const QandAComment = ({ comment }: QandACommentProps) => {
     return (
         <Wrapper>
             <ProfileWrapper>
                 <ProfileImg />
-                <p>강해민</p>
+                <p>{comment.author_name}</p>
             </ProfileWrapper>
-            <Content>선생님 이거 머라는거에요?선생님 이거 머라는거에요?선생님 이거 머라는거에요?</Content>
+            <Content>{comment.content}</Content>
             <InputWrapper>
                 <input placeholder="답변하기" />
                 <img src={Comment} alt="보내기" style={{ marginLeft: "auto", cursor: "pointer" }} />
@@ -21,7 +26,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: calc(100% - 12px);
-    height: 116px;
+    height: 100%;
     padding: 12px;
     border: 1px solid #414142;
     border-radius: 8px;

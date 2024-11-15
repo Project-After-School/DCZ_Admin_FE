@@ -25,7 +25,7 @@ export const Login = () => {
             password: password,
         })
             .then((response) => {
-                Cookie.set("accessToken", response.data.accessToken);
+                Cookie.set("access_token", response.data.access_token);
             })
             .catch(() => {
                 setPassword("");

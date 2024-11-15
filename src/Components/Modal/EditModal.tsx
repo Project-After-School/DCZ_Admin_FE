@@ -1,21 +1,36 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { deleteNotice } from "../../Apis/notice/notice";
+import { Link } from "react-router-dom";
 
 interface EditModalProps {
     closeModal: (e: any) => void;
+    notificationId: string;
 }
 
-export const EditModal = ({ closeModal }: EditModalProps) => {
-    const [isModalOpen] = useState(true);
+export const EditModal = ({ closeModal, notificationId }: EditModalProps) => {
+    const [isModalOpen, setIsModalOpen] = useState(true);
+
+    const handleDelete = async () => {
+        try {
+            await deleteNotice(Number(notificationId));
+            setIsModalOpen(false);
+            closeModal(null);
+        } catch (error) {
+            console.error("공지 삭제 오류:", error);
+        }
+    };
 
     return (
         <>
             {isModalOpen && (
                 <Wrapper onClick={closeModal}>
                     <Container onClick={(e) => e.stopPropagation()}>
-                        <EditText>수정하기</EditText>
+                        <Link to={`/notice/edit/${notificationId}`}>
+                            <EditText>수정하기</EditText>
+                        </Link>
                         <Line />
-                        <DeleteText>삭제하기</DeleteText>
+                        <DeleteText onClick={handleDelete}>삭제하기</DeleteText>
                     </Container>
                 </Wrapper>
             )}
